@@ -46,40 +46,84 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 ```
 BTL-Data-Mining/
 │
-├── config.yaml                # Cấu hình chung (seed, paths, hyperparameters)
+├── .venv/                          # Môi trường ảo (không commit lên GitHub)
+│   ├── etc/
+│   ├── Lib/
+│   ├── Scripts/
+│   ├── share/
+│   ├── .gitignore
+│   ├── .lock
+│   ├── CACHEDIR.TAG
+│   └── pyvenv.cfg
 │
-├── data/                      # Dữ liệu
-│   ├── raw/                   # Dữ liệu gốc (KHÔNG commit)
-│   └── processed/             # Dữ liệu sau tiền xử lý
+├── config.yaml                      # File cấu hình tham số (seed, split, paths, hyperparams)
 │
-├── notebooks/                 # Notebook theo pipeline phân tích
+├── data/                            # Dữ liệu
+│   ├── processed/                    # Dữ liệu sau tiền xử lý
+│   │   ├── crop_clustered.csv
+│   │   ├── crop_processed.csv
+│   │   ├── model_results.csv
+│   │   └── prediction_xgb.csv
+│   │
+│   └── raw/                          # Dữ liệu gốc (được .gitignore)
+│       ├── pesticides.csv
+│       ├── rainfall.csv
+│       ├── temp.csv
+│       ├── yield_df.csv
+│       └── yield.csv
+│
+├── notebooks/                        # Các notebook báo cáo theo pipeline
 │   ├── 01_EDA.ipynb
 │   ├── 02_preprocess_feature.ipynb
 │   ├── 03_mining_or_clustering.ipynb
 │   ├── 04_Modeling.ipynb
-│   └── 05_evaluation_report.ipynb
+│   ├── 05_evaluation_report.ipynb
+│  
 │
-├── src/                       # Source code (module hóa)
-│   ├── data/                 # Load & clean dữ liệu
-│   ├── features/             # Feature engineering
-│   ├── mining/               # Association rules, clustering
-│   ├── models/               # Mô hình ML
-│   ├── evaluation/           # Metrics & báo cáo
-│   └── visualization/        # Vẽ biểu đồ
+├── outputs/                          # Kết quả đầu ra và script chạy pipeline
+│   ├── run_pipeline.py                  # Script chạy toàn bộ pipeline (1, U)
+│   └── run_papermill.py                  # Script chạy notebooks bằng papermill
 │
-├── scripts/                   # Script chạy từng bước
-│   ├── preprocess.py
-│   ├── train_model.py
-│   └── evaluate.py
+├── scripts/                           # Các script xử lý chính
+│   ├── evaluate.py                      # Đánh giá mô hình (1, U)
+│   ├── preprocess.py                     # Tiền xử lý dữ liệu (U)
+│   └── train_model.py                     # Huấn luyện mô hình (6, U)
 │
-├── outputs/                   # Kết quả đầu ra
-│  ├── run_pipeline.py            # Chạy toàn bộ pipeline
-│  ├── run_papermill.py           # Chạy notebook tự động
+├── src/                                # Mã nguồn chính (module hóa)
+│   ├── __init__.py
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── loader.py                  # Đọc dữ liệu, kiểm tra schema
+│   │   └── cleaner.py                  # Xử lý thiếu, outlier, encoding, scaling
+│   │
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── builder.py                  # Feature engineering
+│   │
+│   ├── mining/
+│   │   ├── __init__.py
+│   │   ├── association.py               # Apriori/FP-Growth tìm luật kết hợp
+│   │   └── clustering.py                 # KMeans, HAC, profiling cụm
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── supervised.py                 # Linear/Ridge/XGBRegressor
+│   │
+│   ├── evaluation/
+│   │   ├── __init__.py
+│   │   ├── metrics.py                    # MAE, RMSE, R2, silhouette
+│   │   └── report.py                      # Tổng hợp bảng/biểu đồ kết quả
+│   │
+│   └── visualization/
+│       ├── __init__.py
+│       └── plots.py                        # Hàm vẽ biểu đồ dùng chung
 │
-├── requirements.txt           # Thư viện cần cài
-├── .gitignore                 # File bỏ qua khi commit
-├── LICENSE.txt                # Giấy phép
-└── README.md                  # Tài liệu dự án
+├── .gitignore                          # Các file/thư mục bỏ qua khi commit
+├── LICENSE.txt                         # Giấy phép (Custom License - Educational Use)
+├── README.md                           # Tài liệu hướng dẫn (tiếng Việt)
+└── requirements.txt                    # Thư viện cần cài đặt
+---
 ```
 ---
 
