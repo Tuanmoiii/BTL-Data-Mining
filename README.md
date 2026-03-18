@@ -1,4 +1,4 @@
-# Dự án: Phân tích và Dự báo Năng suất Cây trồng (Crop Yield Prediction)
+# Dự án: 🌾 Crop Yield Prediction & Data Mining Project
 
 ## Mục lục
 1. [Giới thiệu dự án]
