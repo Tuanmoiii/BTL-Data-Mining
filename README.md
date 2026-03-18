@@ -38,7 +38,7 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 |-----------|------|---------|
 | Vũ Ngọc Tiến | 1771020668 | EDA, Preprocessing, Feature Engineering, Config, Params |
 | Bùi Quang Tuấn | 1771020718 | Mining (Association, Clustering), Visualization, Reproducibility |
-| Phong Ngọc Anh | 177102056 | Modeling (Regression), Evaluation, README, Scripts |
+| Phong Ngọc Anh | 1771020056 | Modeling (Regression), Evaluation, README, Scripts |
 
 ---
 
