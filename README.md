@@ -193,15 +193,17 @@ BTL-Data-Mining/
    cd BTL-Data-Mining
 2.Tạo môi trường ảo
 
-bash
+ ```bash
 python -m venv .venv
 source .venv/bin/activate   # Linux/Mac
 # hoặc
 .venv\Scripts\activate      # Windows
+ ```
 3.Cài đặt thư viện
 
-bash
+ ```bash
 pip install -r requirements.txt
+ ```
 4.Cấu hình dữ liệu
 
 Tải dữ liệu từ Kaggle
@@ -211,12 +213,14 @@ Tải dữ liệu từ Kaggle
 Kiểm tra và điều chỉnh đường dẫn trong config.yaml
 
 5.Chạy toàn bộ pipeline
-bash
+ ```bash
 python run_pipeline.py
+ ```
 6.Hoặc chạy từng bước
 
-bash
+ ```bash
 python scripts/preprocess.py
 python scripts/train_model.py
 python scripts/evaluate.py
+ ```
 
