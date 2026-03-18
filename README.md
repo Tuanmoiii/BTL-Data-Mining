@@ -40,7 +40,7 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 | [Bùi Quang Tuấn] | [1771020718] | Mining (Association, Clustering), Visualization , Reproducibility |
 | [Phong Ngọc Anh] | [177102056] | Modeling (Regression), Evaluation, README, Scripts |
 ---
-
+---
 ## 3. Cấu trúc repository
 BTL-Data-Mining/
 │
