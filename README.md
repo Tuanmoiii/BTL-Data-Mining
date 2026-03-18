@@ -211,7 +211,6 @@ Tải dữ liệu từ Kaggle
 Kiểm tra và điều chỉnh đường dẫn trong config.yaml
 
 5.Chạy toàn bộ pipeline
-
 bash
 python run_pipeline.py
 6.Hoặc chạy từng bước
