@@ -12,23 +12,23 @@
 
 ## 1. Giới thiệu dự án
 
-Đề tài: **Phân tích và Dự báo Năng suất Cây trồng** (Đề số 7)
+**Đề tài:** Phân tích và Dự báo Năng suất Cây trồng (Đề số 7)
 
 Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ liệu - Học kỳ II năm học 2025-2026**.
 
 ### Mục tiêu:
-- Phân tích các yếu tố ảnh hưởng đến năng suất cây trồng (thời tiết, đất đai, loại cây trồng).
-- Khai phá luật kết hợp giữa các điều kiện canh tác và năng suất cao.
-- Phân cụm các vùng trồng trọt dựa trên đặc điểm khí hậu - thổ nhưỡng.
-- Xây dựng mô hình dự báo năng suất (hồi quy) và đánh giá hiệu năng.
-- Đề xuất các khuyến nghị canh tác dựa trên kết quả khai phá dữ liệu.
+- Phân tích các yếu tố ảnh hưởng đến năng suất cây trồng (thời tiết, đất đai, loại cây trồng)
+- Khai phá luật kết hợp giữa các điều kiện canh tác và năng suất cao
+- Phân cụm các vùng trồng trọt dựa trên đặc điểm khí hậu - thổ nhưỡng
+- Xây dựng mô hình dự báo năng suất (hồi quy) và đánh giá hiệu năng
+- Đề xuất các khuyến nghị canh tác dựa trên kết quả khai phá dữ liệu
 
 ### Tiêu chí thành công:
-- Xây dựng được pipeline khai phá dữ liệu hoàn chỉnh, có module hóa rõ ràng.
-- Đạt được kết quả dự báo với MAE/RMSE thấp trên tập kiểm tra.
-- Phát hiện được các luật kết hợp có ý nghĩa thực tiễn (lift > 1.5, support khả quan).
-- Phân cụm và diễn giải được đặc trưng của từng vùng trồng.
-- Repo đảm bảo tính tái lập (reproducible) theo đúng yêu cầu giảng viên.
+- Xây dựng được pipeline khai phá dữ liệu hoàn chỉnh, có module hóa rõ ràng
+- Đạt được kết quả dự báo với MAE/RMSE thấp trên tập kiểm tra
+- Phát hiện được các luật kết hợp có ý nghĩa thực tiễn (lift > 1.5, support khả quan)
+- Phân cụm và diễn giải được đặc trưng của từng vùng trồng
+- Đảm bảo tính tái lập (reproducible) theo đúng yêu cầu
 
 ---
 
@@ -36,64 +36,69 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 
 | Họ và tên | MSSV | Vai trò |
 |-----------|------|---------|
-| [Vũ Ngọc Tiến] | [1771020668] | EDA, Preprocessing, Feature Engineering, Config, Params |
-| [Bùi Quang Tuấn] | [1771020718] | Mining (Association, Clustering), Visualization , Reproducibility |
-| [Phong Ngọc Anh] | [177102056] | Modeling (Regression), Evaluation, README, Scripts |
+| Vũ Ngọc Tiến | 1771020668 | EDA, Preprocessing, Feature Engineering, Config, Params |
+| Bùi Quang Tuấn | 1771020718 | Mining (Association, Clustering), Visualization, Reproducibility |
+| Phong Ngọc Anh | 177102056 | Modeling (Regression), Evaluation, README, Scripts |
+
 ---
+
 ## 3. Cấu trúc repository
 BTL-Data-Mining/
 │
-├── config.yaml
+├── config.yaml # Cấu hình chung
 │
-├── data/
-│ ├── raw/
-│ └── processed/
+├── data/ # Dữ liệu
+│ ├── raw/ # Dữ liệu gốc (KHÔNG commit)
+│ └── processed/ # Dữ liệu sau tiền xử lý
 │
-├── notebooks/
+├── notebooks/ # Notebook phân tích
 │ ├── 01_EDA.ipynb
 │ ├── 02_preprocess_feature.ipynb
 │ ├── 03_mining_or_clustering.ipynb
 │ ├── 04_Modeling.ipynb
 │ └── 05_evaluation_report.ipynb
-│
-├── src/
-│ ├── data/
-│ ├── features/
-│ ├── mining/
-│ ├── models/
-│ ├── evaluation/
-│ └── visualization/
-│
-├── scripts/
+│├── src/ # Source code
+│ ├── data/ # Load & clean dữ liệu
+│ │ └── init.py
+│ ├── features/ # Feature engineering
+│ │ └── init.py
+│ ├── mining/ # Association rules, clustering
+│ │ └── init.py
+│ ├── models/ # Mô hình ML
+│ │ └── init.py
+│ ├── evaluation/ # Metrics & báo cáo
+│ │ └── init.py
+│ └── visualization/ # Vẽ biểu đồ
+│ └── init.py
+│├── scripts/ # Script chạy từng bước
 │ ├── preprocess.py
 │ ├── train_model.py
 │ └── evaluate.py
 │
-├── outputs/
-│ ├── figures/
-│ ├── tables/
-│ ├── models/
-│ └── reports/
+├── outputs/ # Kết quả đầu ra
+│ ├── figures/ # Biểu đồ
+│ ├── tables/ # Bảng kết quả
+│ ├── models/ # Model đã train
+│ └── reports/ # Báo cáo/logs
 │
-├── run_pipeline.py
-├── run_papermill.py
-│
-├── requirements.txt
-├── .gitignore
-├── LICENSE.txt
-└── README.md
-
+├── run_pipeline.py # Chạy toàn bộ pipeline
+├── run_papermill.py # Chạy notebook tự động
+├── requirements.txt # Thư viện cần cài
+├── .gitignore # File bỏ qua khi commit
+├── LICENSE.txt # Giấy phép
+└── README.md # Tài liệu dự án
 
 ---
+
 ## 4. Dữ liệu
-### Nguồn dữ liệu:
-Kaggle: [Crop Yield Prediction Dataset](https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset)  
-*(Hoặc link cụ thể nhóm sử dụng)*
 
-### Mô tả dữ liệu (Data Dictionary):
+### Nguồn dữ liệu
+**Kaggle:** [Crop Yield Prediction Dataset](https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset)
 
-| Tên file | Cột | Kiểu | Ý nghĩa |
-|----------|-----|------|---------|
+### Mô tả dữ liệu (Data Dictionary)
+
+| File | Cột | Kiểu | Ý nghĩa |
+|------|-----|------|---------|
 | **yield.csv** | Area | object | Quốc gia / vùng trồng |
 | | Item | object | Loại cây trồng |
 | | Year | int | Năm thu hoạch |
@@ -105,47 +110,44 @@ Kaggle: [Crop Yield Prediction Dataset](https://www.kaggle.com/datasets/patelris
 | **pesticides.csv** | Area | object | Quốc gia |
 | | Item | object | Loại cây trồng |
 | | Year | int | Năm |
-| | pesticides_tonnes | float | Lượng thuốc trừ sâu sử dụng (tấn) |
+| | pesticides_tonnes | float | Lượng thuốc trừ sâu (tấn) |
 | **temp.csv** | Area | object | Quốc gia |
 | | Item | object | Loại cây trồng |
 | | Year | int | Năm |
 | | avg_temp | float | Nhiệt độ trung bình năm (°C) |
 
-### Rủi ro dữ liệu:
-- **Dữ liệu thiếu:** Một số vùng/năm có thể thiếu giá trị lượng mưa hoặc nhiệt độ.
-- **Đơn vị không đồng nhất:** Cần kiểm tra lại đơn vị của yield (hg/ha → tấn/ha nếu cần).
-- **Data Leakage:** Cần đảm bảo không dùng thông tin từ tương lai (khi chia train/test theo năm).
+### Rủi ro dữ liệu
+- **Dữ liệu thiếu:** Một số vùng/năm có thể thiếu giá trị lượng mưa hoặc nhiệt độ
+- **Đơn vị không đồng nhất:** Cần kiểm tra lại đơn vị của yield
+- **Data Leakage:** Đảm bảo không dùng thông tin từ tương lai khi chia train/test
 
 ---
 
 ## 5. Quy trình thực hiện
 
-Dự án tuân theo pipeline khai phá dữ liệu chuẩn:
+### 5.1. Data Ingestion & EDA (`01_EDA.ipynb`)
+- Đọc dữ liệu từ `data/raw/`, kiểm tra phân phối, tương quan, missing values
+- Vẽ biểu đồ phân phối yield theo năm, vùng, loại cây
 
-1. **Data Ingestion & EDA** (`01_EDA.ipynb`):
-   - Đọc dữ liệu từ `data/raw/`, kiểm tra phân phối, tương quan, missing values.
-   - Vẽ biểu đồ: phân phối yield theo năm, theo vùng, theo loại cây.
+### 5.2. Tiền xử lý & Feature Engineering (`02_preprocess_feature.ipynb`)
+- Gộp các bảng dữ liệu theo (Area, Item, Year)
+- Xử lý missing values (median/mean imputation)
+- Rời rạc hóa biến điều kiện cho luật kết hợp
+- Feature engineering: lag features, tương tác nhiệt độ*mưa
 
-2. **Tiền xử lý & Feature Engineering** (`02_preprocess_feature.ipynb` + `src/data/`, `src/features/`):
-   - Gộp các bảng dữ liệu (merge) theo (Area, Item, Year).
-   - Xử lý missing (median/mean imputation, hoặc loại bỏ nếu quá nhiều).
-   - Rời rạc hóa (discretization) các biến điều kiện để chuẩn bị cho luật kết hợp.
-   - Feature engineering: lag features (năng suất năm trước), tương tác (nhiệt độ*mưa), ...
+### 5.3. Khai phá tri thức (`03_mining_or_clustering.ipynb`)
+- **Luật kết hợp:** Apriori/FP-Growth tìm tổ hợp cho năng suất cao
+- **Phân cụm:** KMeans/HAC trên vùng trồng, profiling từng cụm
 
-3. **Khai phá tri thức** (`03_mining_or_clustering.ipynb` + `src/mining/`):
-   - **Luật kết hợp:** Apriori/FP-Growth trên dữ liệu đã rời rạc để tìm tổ hợp (giống cây, vùng, điều kiện thời tiết) cho năng suất cao. Đánh giá support, confidence, lift.
-   - **Phân cụm:** KMeans/HAC trên các vùng trồng dựa trên đặc trưng khí hậu. Profiling từng cụm, so sánh năng suất trung bình giữa các cụm.
+### 5.4. Mô hình hóa (Hồi quy) (`04_Modeling.ipynb`)
+- Baseline: Linear Regression, Ridge Regression
+- Mô hình mạnh: Random Forest, XGBoost
+- Đánh giá: MAE, RMSE, R²
 
-4. **Mô hình hóa (Hồi quy)** (`04_Modeling.ipynb` + `src/models/`):
-   - Baseline: Linear Regression, Ridge Regression.
-   - Mô hình mạnh: Random Forest Regressor, XGBoost Regressor.
-   - Thiết lập thực nghiệm: chia train/test theo năm (tránh leakage), sử dụng cross-validation.
-   - Đánh giá: MAE, RMSE, R².
-
-5. **Đánh giá & Insight** (`05_evaluation_report.ipynb` + `src/evaluation/`):
-   - So sánh kết quả các mô hình (bảng, biểu đồ).
-   - Phân tích lỗi (residual analysis): mô hình sai nhiều ở vùng nào, loại cây nào?
-   - Đưa ra các khuyến nghị canh tác dựa trên luật kết hợp và phân cụm.
+### 5.5. Đánh giá & Insight (`05_evaluation_report.ipynb`)
+- So sánh kết quả các mô hình
+- Phân tích lỗi (residual analysis)
+- Đề xuất khuyến nghị canh tác
 
 ---
 
@@ -161,18 +163,36 @@ Dự án tuân theo pipeline khai phá dữ liệu chuẩn:
    ```bash
    git clone https://github.com/Tuanmoiii/BTL-Data-Mining.git
    cd BTL-Data-Mining
-### Tạo môi trường ảo (khuyến khích)
+2.Tạo môi trường ảo
 
-2. python -m venv .venv
+bash
+python -m venv .venv
 source .venv/bin/activate   # Linux/Mac
 # hoặc
 .venv\Scripts\activate      # Windows
-### Cài đặt thư viện
-3. pip install -r requirements.txt
-4. Cấu hình dữ liệu
+3.Cài đặt thư viện
 
-Tải dữ liệu từ Kaggle theo link đã cung cấp.
+bash
+pip install -r requirements.txt
+4.Cấu hình dữ liệu
 
-Đặt các file .csv vào thư mục data/raw/.
+Tải dữ liệu từ Kaggle
 
-Kiểm tra và điều chỉnh đường dẫn trong configs/params.yaml nếu cần.
+Đặt các file .csv vào thư mục data/raw/
+
+Kiểm tra và điều chỉnh đường dẫn trong config.yaml
+
+5.Chạy toàn bộ pipeline
+
+bash
+python run_pipeline.py
+6.Hoặc chạy từng bước
+
+bash
+python scripts/preprocess.py
+python scripts/train_model.py
+python scripts/evaluate.py
+License
+This project is licensed under the MIT License - see the LICENSE.txt file for details.
+
+
