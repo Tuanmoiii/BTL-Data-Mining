@@ -1,0 +1,13 @@
+data:
+raw_path: "data/raw/yield_df.csv"
+processed_path: "data/processed/crop_processed.csv"
+
+model:
+test_size: 0.2
+random_state: 42
+
+scaling:
+columns:
+- average_rain_fall_mm_per_year
+- pesticides_tonnes
+- avg_temp
