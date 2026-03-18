@@ -46,15 +46,6 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 ```
 BTL-Data-Mining/
 │
-├── .venv/                          # Môi trường ảo (không commit lên GitHub)
-│   ├── etc/
-│   ├── Lib/
-│   ├── Scripts/
-│   ├── share/
-│   ├── .gitignore
-│   ├── .lock
-│   ├── CACHEDIR.TAG
-│   └── pyvenv.cfg
 │
 ├── config.yaml                      # File cấu hình tham số (seed, split, paths, hyperparams)
 │
