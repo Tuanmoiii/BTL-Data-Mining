@@ -1,4 +1,18 @@
-# Dự án: 🌾 Crop Yield Prediction & Data Mining Project
+# Dự án: 🌾 Crop Yield Prediction & Data Mining Project 
+📌 Giới thiệu
+Dự án này nhằm mục tiêu phân tích và dự đoán năng suất cây trồng (Crop Yield) dựa trên các yếu tố như:
+
+Nhiệt độ (Temperature)
+
+Lượng mưa (Rainfall)
+
+Thuốc trừ sâu (Pesticides)
+
+Khu vực (Area)
+
+Loại cây trồng (Item)
+
+Dataset sử dụng từ Kaggle: Crop Yield Dataset
 
 ## Mục lục
 1. [Giới thiệu dự án]
