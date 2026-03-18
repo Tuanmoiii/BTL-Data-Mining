@@ -43,6 +43,7 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 ---
 
 ## 3. Cấu trúc repository
+```
 BTL-Data-Mining/
 │
 ├── config.yaml # Cấu hình chung
@@ -87,7 +88,7 @@ BTL-Data-Mining/
 ├── .gitignore # File bỏ qua khi commit
 ├── LICENSE.txt # Giấy phép
 └── README.md # Tài liệu dự án
-
+```
 ---
 
 ## 4. Dữ liệu
