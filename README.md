@@ -40,53 +40,52 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 | [Bùi Quang Tuấn] | [1771020718] | Mining (Association, Clustering), Visualization , Reproducibility |
 | [Phong Ngọc Anh] | [177102056] | Modeling (Regression), Evaluation, README, Scripts |
 ---
----
 ## 3. Cấu trúc repository
 BTL-Data-Mining/
 │
-├── config.yaml                # Cấu hình chung (seed, paths, hyperparameters)
+├── config.yaml
 │
-├── data/                      # Dữ liệu
-│   ├── raw/                   # Dữ liệu gốc (KHÔNG commit)
-│   └── processed/             # Dữ liệu sau tiền xử lý
+├── data/
+│ ├── raw/
+│ └── processed/
 │
-├── notebooks/                 # Notebook theo pipeline phân tích
-│   ├── 01_EDA.ipynb
-│   ├── 02_preprocess_feature.ipynb
-│   ├── 03_mining_or_clustering.ipynb
-│   ├── 04_Modeling.ipynb
-│   └── 05_evaluation_report.ipynb
+├── notebooks/
+│ ├── 01_EDA.ipynb
+│ ├── 02_preprocess_feature.ipynb
+│ ├── 03_mining_or_clustering.ipynb
+│ ├── 04_Modeling.ipynb
+│ └── 05_evaluation_report.ipynb
 │
-├── src/                       # Source code (module hóa)
-│   ├── data/                 # Load & clean dữ liệu
-│   ├── features/             # Feature engineering
-│   ├── mining/               # Association rules, clustering
-│   ├── models/               # Mô hình ML
-│   ├── evaluation/           # Metrics & báo cáo
-│   └── visualization/        # Vẽ biểu đồ
+├── src/
+│ ├── data/
+│ ├── features/
+│ ├── mining/
+│ ├── models/
+│ ├── evaluation/
+│ └── visualization/
 │
-├── scripts/                   # Script chạy từng bước
-│   ├── preprocess.py
-│   ├── train_model.py
-│   └── evaluate.py
+├── scripts/
+│ ├── preprocess.py
+│ ├── train_model.py
+│ └── evaluate.py
 │
-├── outputs/                   # Kết quả đầu ra
-│   ├── figures/              # Biểu đồ
-│   ├── tables/               # Bảng kết quả
-│   ├── models/               # Model đã train
-│   └── reports/              # Báo cáo/logs
+├── outputs/
+│ ├── figures/
+│ ├── tables/
+│ ├── models/
+│ └── reports/
 │
-├── run_pipeline.py            # Chạy toàn bộ pipeline
-├── run_papermill.py           # Chạy notebook tự động
+├── run_pipeline.py
+├── run_papermill.py
 │
-├── requirements.txt           # Thư viện cần cài
-├── .gitignore                 # File bỏ qua khi commit
-├── LICENSE.txt                # Giấy phép
-└── README.md                  # Tài liệu dự án
+├── requirements.txt
+├── .gitignore
+├── LICENSE.txt
+└── README.md
+
+
 ---
-
 ## 4. Dữ liệu
-
 ### Nguồn dữ liệu:
 Kaggle: [Crop Yield Prediction Dataset](https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset)  
 *(Hoặc link cụ thể nhóm sử dụng)*
