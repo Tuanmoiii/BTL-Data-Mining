@@ -46,48 +46,40 @@ Dự án được thực hiện trong khuôn khổ học phần **Khai phá Dữ
 ```
 BTL-Data-Mining/
 │
-├── config.yaml # Cấu hình chung
+├── config.yaml                # Cấu hình chung (seed, paths, hyperparameters)
 │
-├── data/ # Dữ liệu
-│ ├── raw/ # Dữ liệu gốc (KHÔNG commit)
-│ └── processed/ # Dữ liệu sau tiền xử lý
+├── data/                      # Dữ liệu
+│   ├── raw/                   # Dữ liệu gốc (KHÔNG commit)
+│   └── processed/             # Dữ liệu sau tiền xử lý
 │
-├── notebooks/ # Notebook phân tích
-│ ├── 01_EDA.ipynb
-│ ├── 02_preprocess_feature.ipynb
-│ ├── 03_mining_or_clustering.ipynb
-│ ├── 04_Modeling.ipynb
-│ └── 05_evaluation_report.ipynb
-│├── src/ # Source code
-│ ├── data/ # Load & clean dữ liệu
-│ │ └── init.py
-│ ├── features/ # Feature engineering
-│ │ └── init.py
-│ ├── mining/ # Association rules, clustering
-│ │ └── init.py
-│ ├── models/ # Mô hình ML
-│ │ └── init.py
-│ ├── evaluation/ # Metrics & báo cáo
-│ │ └── init.py
-│ └── visualization/ # Vẽ biểu đồ
-│ └── init.py
-│├── scripts/ # Script chạy từng bước
-│ ├── preprocess.py
-│ ├── train_model.py
-│ └── evaluate.py
+├── notebooks/                 # Notebook theo pipeline phân tích
+│   ├── 01_EDA.ipynb
+│   ├── 02_preprocess_feature.ipynb
+│   ├── 03_mining_or_clustering.ipynb
+│   ├── 04_Modeling.ipynb
+│   └── 05_evaluation_report.ipynb
 │
-├── outputs/ # Kết quả đầu ra
-│ ├── figures/ # Biểu đồ
-│ ├── tables/ # Bảng kết quả
-│ ├── models/ # Model đã train
-│ └── reports/ # Báo cáo/logs
+├── src/                       # Source code (module hóa)
+│   ├── data/                 # Load & clean dữ liệu
+│   ├── features/             # Feature engineering
+│   ├── mining/               # Association rules, clustering
+│   ├── models/               # Mô hình ML
+│   ├── evaluation/           # Metrics & báo cáo
+│   └── visualization/        # Vẽ biểu đồ
 │
-├── run_pipeline.py # Chạy toàn bộ pipeline
-├── run_papermill.py # Chạy notebook tự động
-├── requirements.txt # Thư viện cần cài
-├── .gitignore # File bỏ qua khi commit
-├── LICENSE.txt # Giấy phép
-└── README.md # Tài liệu dự án
+├── scripts/                   # Script chạy từng bước
+│   ├── preprocess.py
+│   ├── train_model.py
+│   └── evaluate.py
+│
+├── outputs/                   # Kết quả đầu ra
+│  ├── run_pipeline.py            # Chạy toàn bộ pipeline
+│  ├── run_papermill.py           # Chạy notebook tự động
+│
+├── requirements.txt           # Thư viện cần cài
+├── .gitignore                 # File bỏ qua khi commit
+├── LICENSE.txt                # Giấy phép
+└── README.md                  # Tài liệu dự án
 ```
 ---
 
@@ -193,7 +185,4 @@ bash
 python scripts/preprocess.py
 python scripts/train_model.py
 python scripts/evaluate.py
-License
-This project is licensed under the MIT License - see the LICENSE.txt file for details.
-
 
